@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col">
+    <form [formGroup]="createMovieListForm">
+      <mat-form-field>
+        <mat-label floatLabel="always">MOVIE LIST TITLE</mat-label>
+        <input matInput id="title" formControlName="title">
+      </mat-form-field>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <button mat-button (click)="save()">SAVE</button>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+{
+  "name": "mandalorilist",
+  "version": "0.0.0",
+  "description": "Movie list and rating applicaiton",
+  "main": "src/app.js",
+  "author": "Colin Nykanen",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/helper-module-imports": "^7.7.4",
+    "@babel/runtime": "^7.7.4",
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "mongoose": "^5.7.13",
+    "redis": "^2.8.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/register": "^7.7.4",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "faker": "^4.1.0",
+    "gulp": "3.9.1",
+    "gulp-babel": "7",
+    "gulp-clean": "^0.4.0",
+    "gulp-dotenv": "^0.2.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-nodemon": "^2.4.2",
+    "gulp-print": "^5.0.2",
+    "gulp-yarn": "^2.0.0",
+    "nodemon": "^2.0.1"
+  }
+}

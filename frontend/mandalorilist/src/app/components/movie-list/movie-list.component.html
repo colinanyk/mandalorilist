@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <mat-card class="main-card__container">
+        <mat-card-title>
+          <div class="row">
+            <div class="col">
+              <p>MOVIE LISTS</p>
+            </div>
+            <div class="col">
+              <button mat-button (click)="searchForMovies()">SEARCH FOR MOVIES</button>
+            </div>
+            <div class="col">
+              <button mat-button (click)="createMovieList()">CREATE LIST</button>
+            </div>
+          </div>
+        </mat-card-title>
+        <mat-card-content>
+          <table mat-table [dataSource]="movieLists" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="title">
+              <th mat-header-cell *matHeaderCellDef>TITLE</th>
+              <td mat-cell *matCellDef="let element" (click)="goToMovieList(element._id)"> {{element.title}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="movieCount">
+              <th mat-header-cell *matHeaderCellDef> MOVIE COUNT </th>
+              <td mat-cell *matCellDef="let element" (click)="goToMovieList(element._id)"> {{element.movies.length}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="averageRating">
+              <th mat-header-cell *matHeaderCellDef> AVERAGE RATING </th>
+              <td mat-cell *matCellDef="let element" (click)="goToMovieList(element._id)"> {{element.averageRating}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

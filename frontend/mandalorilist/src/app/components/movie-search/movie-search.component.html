@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <mat-card class="main-card__container">
+        <mat-card-title>
+          <div class="row">
+            <div class="col">
+              <p>CREATE MOVIE LISTS</p>
+            </div>
+            <div class="col">
+              <button mat-button (click)="back()">BACK</button>
+            </div>
+          </div>
+        </mat-card-title>
+        <mat-card-content>
+          <div class="row">
+            <div class="col">
+              <form [formGroup]="searchForm">
+                <mat-form-field>
+                  <mat-label floatLabel="always">TITLE</mat-label>
+                  <input matInput type="text" formControlName="title" id="title">
+                </mat-form-field>
+              </form>
+            </div>
+            <div class="col">
+              <button mat-button (click)="searchForMovies()">SEARCH</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" *ngIf="movies">
+              <table mat-table [dataSource]="movies" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="title">
+                  <th mat-header-cell *matHeaderCellDef>TITLE</th>
+                  <td mat-cell *matCellDef="let element" (click)="getMovieDetails(element.imdbID)"> {{element.Title}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="year">
+                  <th mat-header-cell *matHeaderCellDef> YEAR </th>
+                  <td mat-cell *matCellDef="let element" (click)="getMovieDetails(element.imdbID)"> {{element.Year}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="poster">
+                  <th mat-header-cell *matHeaderCellDef> POSTER </th>
+                  <td mat-cell *matCellDef="let element" (click)="getMovieDetails(element.imdbID)"> <img [src]="element.Poster"> </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="columns"></tr>
+                <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+              </table>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container-fluid" *ngIf="movieDetails">
+  <div class="row">
+    <div class="col">
+      <img [src]="movieDetails.poster">
+    </div>
+    <div class="row">
+      <div class="col">
+        <h4>{{movieDetails.totalRating || 0}}/100</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>{{movieDetails.title}}</p>
+      </div>
+      <div class="col">
+        <p>{{movieDetails.year}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>{{movieDetails.rated}}</p>
+      </div>
+      <div class="col">
+        <p>{{movieDetails.genre}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" *ngIf="movieLists.length > 0">
+      <form [formGroup]="movieListForm">
+        <label formArrayName="lists" *ngFor="let list of movieListForm.controls.lists.controls; let i = index">
+          <input type="checkbox" [formControlName]="i">
+          {{movieLists[i].title}}
+        </label>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button mat-button (click)="save(movieDetails)">ADD TO LISTS</button>
+    </div>
+  </div>
+</div>

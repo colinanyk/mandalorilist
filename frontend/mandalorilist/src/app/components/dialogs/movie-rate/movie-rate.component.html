@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="rateMovieForm">
+        <mat-form-field>
+          <mat-label floatLabel="always">YOUR RATING</mat-label>
+          <input matInput id="rating" type="number" formControlName="rating">
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button mat-button (click)="save()">SUBMIT</button>
+    </div>
+  </div>
+</div>
